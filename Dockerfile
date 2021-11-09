@@ -1,7 +1,7 @@
 FROM node:14
 
 LABEL "com.github.actions.name"="Build App with npm"
-LABEL "com.github.actions.description"="This action will build your App using npm build."
+LABEL "com.github.actions.description"="This action will build your App using npm run build."
 LABEL "com.github.actions.icon"="git-commit"
 LABEL "com.github.actions.color"="orange"
 

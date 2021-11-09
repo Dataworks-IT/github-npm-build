@@ -1,5 +1,5 @@
 name: 'Build App'
-description: 'This action will build your App.'
+description: 'This action will build your App using npm run build'
 author: 'Ezequiel Leites <ezequiel@leites.dev> modified by Erik Robertson <erikrob@gmail.com>'
 
 runs:

@@ -29,4 +29,4 @@ eval "npm install" && \
 
 # Builds the project
 echo "Running build scripts.." && \
-eval "npm build"
+eval "npm run build"
