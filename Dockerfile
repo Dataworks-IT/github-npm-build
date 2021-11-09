@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:14
 
 LABEL "com.github.actions.name"="Build App with npm"
 LABEL "com.github.actions.description"="This action will build your App using npm build."
