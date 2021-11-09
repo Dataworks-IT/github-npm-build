@@ -1,0 +1,11 @@
+name: 'Build App'
+description: 'This action will build your App.'
+author: 'Ezequiel Leites <ezequiel@leites.dev> modified by Erik Robertson <erikrob@gmail.com>'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'git-commit'
+  color: 'orange'
