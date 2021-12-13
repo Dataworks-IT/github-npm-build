@@ -29,4 +29,9 @@ eval "npm install" && \
 
 # Builds the project
 echo "Running build scripts.." && \
-eval "npm run build"
+if [ -z "$BUILD_ENV" ]
+then
+  eval "npm run build"
+else
+  eval "npm run build:$BUILD_ENV"
+fi
