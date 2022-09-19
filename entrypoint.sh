@@ -21,6 +21,7 @@ cd $GITHUB_WORKSPACE && \
 git clone https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${GITHUB_REPOSITORY}.git . && \
 
 # Checks out selected branch (main by default)
+echo "Checkout requested branch.." && \
 if [ -z "$BRANCH" ]
 then
   eval "git checkout main" && \
