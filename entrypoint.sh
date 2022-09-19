@@ -24,10 +24,10 @@ git clone https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${G
 echo "Checkout requested branch.." && \
 if [ -z "$BRANCH" ]
 then
-  eval "git checkout main" && \
+  eval "git checkout main"
 else
-  eval "git checkout $BRANCH" && \
-fi
+  eval "git checkout $BRANCH"
+fi  && \
 
 # Install dependencies
 echo "Installing dependencies.." && \
