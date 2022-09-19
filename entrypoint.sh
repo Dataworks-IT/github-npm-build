@@ -20,8 +20,13 @@ cd $GITHUB_WORKSPACE && \
 # Clone repository
 git clone https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${GITHUB_REPOSITORY}.git . && \
 
-# Checks out to master.
-git checkout main && \
+# Checks out selected branch (main by default)
+if [ -z "$BRANCH" ]
+then
+  eval "git checkout main" && \
+else
+  eval "git checkout $BRANCH" && \
+fi
 
 # Install dependencies
 echo "Installing dependencies.." && \
