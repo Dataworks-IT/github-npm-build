@@ -31,11 +31,12 @@ fi  && \
 
 # Install dependencies
 echo "Installing dependencies.." && \
+echo $NODE_ENV && \
 if [ -z "$INSTALL_DEV" ]
 then
   eval "npm install"
 else
-  eval "npm install --also=dev"
+  eval "npm install --also=dev --production=false"
 fi  && \
 
 # Builds the project
