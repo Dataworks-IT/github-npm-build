@@ -9,6 +9,6 @@ LABEL "repository"="http://github.com/erikrob/github-npm-build"
 LABEL "homepage"="http://github.com/erikrob/github-npm-build"
 LABEL "maintainer"="Ezequiel Leites <ezequiel@leites.dev>"
 
-ADD ~/.aws/credentials /github/home/.aws/credentials
+ADD $HOME/.aws/credentials /github/home/.aws/credentials
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
