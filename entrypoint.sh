@@ -35,9 +35,17 @@ eval "npm install" && \
 
 # Builds the project
 echo "Running build scripts.." && \
+
+if [ -z "$BUILD_CMD" ]
+then
+  USE_CMD=$BUILD_CMD
+else
+  USE_CMD=build
+fi
+
 if [ -z "$BUILD_ENV" ]
 then
-  eval "npm run build"
+  eval "npm run $BUILD_CMD"
 else
-  eval "npm run build:$BUILD_ENV"
+  eval "npm run $BUILD_CMD:$BUILD_ENV"
 fi
