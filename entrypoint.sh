@@ -40,15 +40,15 @@ if [ -z "$BUILD_CMD" ]
 then
   if [ -z "$BUILD_ENV" ]
   then
-    eval "npm run $BUILD_CMD"
+    eval "npm run build"
   else
-    eval "npm run $BUILD_CMD:$BUILD_ENV"
+    eval "npm run build:$BUILD_ENV"
   fi
 else
   if [ -z "$BUILD_ENV" ]
   then
-    eval "npm run build"
+    eval "npm run $BUILD_CMD"
   else
-    eval "npm run build:$BUILD_ENV"
+    eval "npm run $BUILD_CMD:$BUILD_ENV"
   fi
 fi
