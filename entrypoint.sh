@@ -31,7 +31,12 @@ fi  && \
 
 # Install dependencies
 echo "Installing dependencies.." && \
-eval "npm install" && \
+if [ -z "$INSTALL_DEV" ]
+then
+  eval "npm install" && \
+else
+  eval "npm install --dev" && \
+fi
 
 # Builds the project
 echo "Running build scripts.." && \
