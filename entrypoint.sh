@@ -35,7 +35,7 @@ if [ -z "$INSTALL_DEV" ]
 then
   eval "npm install"
 else
-  eval "npm install --dev"
+  eval "npm install --also=dev"
 fi  && \
 
 # Builds the project
