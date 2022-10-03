@@ -31,10 +31,11 @@ fi  && \
 
 # Install dependencies
 echo "Installing dependencies.." && \
+echo $INSTALL_DEV && \
 if [ -z "$INSTALL_DEV" ]
 then
   echo "REGULAR NPM INSTALL mode" && \
-  eval "npm install"
+  eval "npm ci"
 else
   echo "INSTALL DEV MODE" && \
   eval "npm ci"
