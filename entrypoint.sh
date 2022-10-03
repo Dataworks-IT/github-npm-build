@@ -38,14 +38,17 @@ echo "Running build scripts.." && \
 
 if [ -z "$BUILD_CMD" ]
 then
-  USE_CMD=$BUILD_CMD
+  if [ -z "$BUILD_ENV" ]
+  then
+    eval "npm run $BUILD_CMD"
+  else
+    eval "npm run $BUILD_CMD:$BUILD_ENV"
+  fi
 else
-  USE_CMD=build
-fi
-
-if [ -z "$BUILD_ENV" ]
-then
-  eval "npm run $USE_CMD"
-else
-  eval "npm run $USE_CMD:$BUILD_ENV"
+  if [ -z "$BUILD_ENV" ]
+  then
+    eval "npm run build"
+  else
+    eval "npm run build:$BUILD_ENV"
+  fi
 fi
