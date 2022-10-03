@@ -33,6 +33,7 @@ fi  && \
 echo "Installing dependencies.." && \
 if [ -z "$INSTALL_DEV" ]
 then
+  echo "REGULAR NPM INSTALL mode" && \
   eval "npm install"
 else
   echo "INSTALL DEV MODE" && \
