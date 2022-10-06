@@ -9,6 +9,7 @@ LABEL "repository"="http://github.com/erikrob/github-npm-build"
 LABEL "homepage"="http://github.com/erikrob/github-npm-build"
 LABEL "maintainer"="Ezequiel Leites <ezequiel@leites.dev>"
 
-ADD $HOME/.aws/credentials /github/home/.aws/credentials
+#the line below is to actually do a conditional copy of .aws/credentials IF IT EXISTS. It's just that the COPY command requires at least one good file.
+COPY entrypoint.sh $HOME/.aws/credential* /github/home/.aws/credentials
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
