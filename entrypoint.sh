@@ -52,22 +52,19 @@ then
 else
   mkdir $HOME/.aws && \
   cat <<EOF >$HOME/.aws/credentials
-[default]
-aws_access_key_id = AKIAQZVCGUT6MUJRHPIV
-aws_secret_access_key = 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
+[$PROFILE]
+aws_access_key_id = $AWS_ACCESS_KEY_ID
+aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
 EOF
   cat <<EOF >$HOME/.aws/config
 [default]
 region = us-west-2
-
 [profile stg]
 region = us-west-2
-
 [profile prd]
 region = us-west-2
 EOF
-    ls $HOME/.aws/config
-    cat $HOME/.aws/credentials
+  cat $HOME/.aws/credentials
   if [ -z "$BUILD_ENV" ]
   then
     eval "npm run $BUILD_CMD"
