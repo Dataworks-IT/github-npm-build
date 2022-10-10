@@ -55,7 +55,7 @@ else
 [default]
 aws_access_key_id = AKIAQZVCGUT6MUJRHPIV
 aws_secret_access_key = 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
-EOF && \
+EOF
   if [ -z "$BUILD_ENV" ]
   then
     eval "npm run $BUILD_CMD"
