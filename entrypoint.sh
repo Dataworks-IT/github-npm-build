@@ -38,20 +38,12 @@ else
   eval "npm install --also=dev --production=false"
 fi  && \
 
-# Builds the project
-echo "Running build scripts.." && \
-
-if [ -z "$BUILD_CMD" ]
+# Setup AWS
+if [ -n "$AWS_PROFILE" ]
 then
-  if [ -z "$BUILD_ENV" ]
-  then
-    eval "npm run build"
-  else
-    eval "npm run build:$BUILD_ENV"
-  fi
-else
+  echo "Running build scripts.." && \
   mkdir $HOME/.aws && \
-  PROFILE=$PROFILE AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY cat <<EOF >$HOME/.aws/credentials
+  cat <<EOF >$HOME/.aws/credentials
 [$AWS_PROFILE]
 aws_access_key_id = $AWS_ACCESS_KEY_ID
 aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
@@ -64,7 +56,20 @@ region = us-west-2
 [profile prd]
 region = us-west-2
 EOF
-  cat $HOME/.aws/credentials
+fi
+
+# Builds the project
+echo "Running build scripts.." && \
+
+if [ -z "$BUILD_CMD" ]
+then
+  if [ -z "$BUILD_ENV" ]
+  then
+    eval "npm run build"
+  else
+    eval "npm run build:$BUILD_ENV"
+  fi
+else
   if [ -z "$BUILD_ENV" ]
   then
     eval "npm run $BUILD_CMD"
