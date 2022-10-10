@@ -52,7 +52,7 @@ then
 else
   mkdir $HOME/.aws && \
   PROFILE=$PROFILE AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY cat <<EOF >$HOME/.aws/credentials
-[$PROFILE]
+[$AWS_PROFILE]
 aws_access_key_id = $AWS_ACCESS_KEY_ID
 aws_secret_access_key = $AWS_SECRET_ACCESS_KEY
 EOF
