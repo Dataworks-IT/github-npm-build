@@ -16,6 +16,7 @@ apt-get install -y git && \
 
 # Directs the action to the the Github workspace.
 cd $GITHUB_WORKSPACE && \
+git config --global --add safe.directory /github/workspace && \
 
 # Clone repository
 git clone https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${GITHUB_REPOSITORY}.git . && \
