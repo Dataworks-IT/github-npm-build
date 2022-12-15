@@ -56,7 +56,7 @@ region = us-west-2
 [profile prd]
 region = us-west-2
 EOF
-fi
+fi && \
 
 # Builds the project
 echo "Running build scripts.." && \
