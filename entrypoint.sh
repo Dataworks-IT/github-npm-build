@@ -30,6 +30,8 @@ else
 fi  && \
 
 # Install dependencies
+echo "Installing dependencies TEMP .." && \
+eval "npm install" && \
 echo "Installing dependencies.." && \
 if [ -z "$INSTALL_DEV" ]
 then
